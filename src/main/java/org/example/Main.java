@@ -13,5 +13,13 @@ public class Main {
 
         System.out.println("### Liste der Medikamente ###");
         System.out.println(pharmacy.getMedications());
+
+        System.out.println("### Suche nach Medikament ###");
+        Medication foundMedication = pharmacy.find("Ibuprofen");
+        System.out.println(foundMedication);
+
+        System.out.println("### Liste der Medikamente nach dem Entfernen eines Eintrags ###");
+        pharmacy.delete("Ratiopharm");
+        System.out.println(pharmacy.getMedications());
     }
 }

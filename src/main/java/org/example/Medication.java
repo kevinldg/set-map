@@ -22,4 +22,9 @@ public class Medication {
     public double getPrice() {
         return this.price;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name + ", Preis: " + this.price + ", Anzahl: " + this.availability;
+    }
 }

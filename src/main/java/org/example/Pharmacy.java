@@ -3,6 +3,7 @@ package org.example;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 public class Pharmacy {
     private Map<String, Medication> medications = new HashMap<>();
@@ -12,15 +13,13 @@ public class Pharmacy {
     }
 
     public String getMedications() {
-        StringBuilder medications = new StringBuilder();
+        StringJoiner medications = new StringJoiner("\n");
 
         for (Medication medication : this.medications.values()) {
-            medications.append("Name: ").append(medication.getName())
-                    .append(", Preis: ").append(medication.getPrice())
-                    .append(", Anzahl: ").append(medication.getAvailability())
-                    .append("\n");
+            medications.add("Name: " + medication.getName() +
+                    ", Preis: " + medication.getPrice() +
+                    ", Anzahl: " + medication.getAvailability());
         }
-
         return medications.toString();
     }
 
